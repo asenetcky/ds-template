@@ -18,7 +18,11 @@ c(
   "nanoparquet",
   "httr2",
   "devtools",
-  "styler"
+  "styler",
+  "DBI",
+  "odbc",
+  "dbplyr",
+  "fs"
 ) |>
   purrr::walk(
     \(pkg) renv::install(pkg, prompt = FALSE)
