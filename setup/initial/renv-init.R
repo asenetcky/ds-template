@@ -17,9 +17,11 @@ c(
   "duckdb",
   "nanoparquet",
   "httr2",
-  "devtools"
+  "devtools",
+  "styler"
 ) |>
   purrr::walk(
     \(pkg) renv::install(pkg, prompt = FALSE)
   )
 
+renv::snapshot()
