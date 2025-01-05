@@ -33,7 +33,7 @@ c(
   "fs"
 ) |>
   purrr::walk(
-    \(pkg) renv::install(pkg,  prompt = FALSE)
+    \(pkg) renv::install(pkg, prompt = FALSE)
   )
 
 renv::snapshot()
