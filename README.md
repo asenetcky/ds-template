@@ -1,2 +1,2 @@
-# ds-lab
-Data Science lab for experimenting and learning
+# ds-template
+Template repository for setting up a quick data science project
