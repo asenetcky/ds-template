@@ -1,5 +1,6 @@
 # setup renv the first time
-renv::init()
+# renv::init()
+# renv::activate(profile = "<PROFILE_NAME>")
 
 # using pak because it plays better with Pop!_OS for me
 options(renv.config.pak.enabled = TRUE)
@@ -17,9 +18,15 @@ c(
   "duckdb",
   "nanoparquet",
   "httr2",
-  "devtools"
+  "devtools",
+  "styler",
+  "DBI",
+  "odbc",
+  "dbplyr",
+  "fs"
 ) |>
   purrr::walk(
     \(pkg) renv::install(pkg, prompt = FALSE)
   )
 
+renv::snapshot()

@@ -26,11 +26,11 @@ jobs:
         with:
           use-public-rspm: true
 
-      - name: Install dependencies
-        uses: r-lib/actions/setup-r-dependencies@v2
+      - name: Setup renv and install packages
+        uses: r-lib/actions/setup-renv@v2
         with:
-          extra-packages: any::styler, any::roxygen2
-          needs: styler
+          profile: '"gha"'
+          cache-version: 1
 
       - name: Enable styler cache
         run: styler::cache_activate()
@@ -59,7 +59,7 @@ jobs:
             ${{ runner.os }}-
 
       - name: Style
-        run: styler::style_pkg()
+        run: styler::style_dir()
         shell: Rscript {0}
 
       - name: Commit and push changes
