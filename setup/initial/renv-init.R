@@ -1,5 +1,6 @@
 # setup renv the first time
-renv::init()
+# renv::init()
+# renv::activate(profile = "<PROFILE_NAME>")
 
 # using pak because it plays better with Pop!_OS for me
 options(renv.config.pak.enabled = TRUE)
